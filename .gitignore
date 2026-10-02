@@ -1,0 +1,9 @@
+# your own study material and chats stay on this computer
+library/
+library.db
+library.db-*
+settings.json
+server.log
+.venv/
+__pycache__/
+*.pyc

@@ -1,0 +1,5 @@
+flask
+python-docx
+python-pptx
+anthropic
+numpy

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Study Buddy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="logo">📚</span>
+      <div><b>Study Buddy</b><small id="aiStatus">checking AI…</small></div>
+      <button class="icon only-mobile" id="closeSide" aria-label="Close">✕</button>
+    </div>
+    <label class="drop" id="drop">
+      <input type="file" id="fileInput" multiple
+             accept=".pdf,.docx,.pptx,.ipynb,.txt,.md,.csv,.py,.java,.c,.cpp,.js,.html,.json,.tex">
+      <b>＋ Add study material</b>
+      <small>Drop files here or click · PDF, Word, slides, notebooks, notes</small>
+    </label>
+    <input class="search" id="search" placeholder="Search your library…">
+    <nav id="nav"></nav>
+    <div class="side-foot">
+      <label>AI model
+        <select id="model"></select>
+      </label>
+      <button class="linkish" id="claudeKey" type="button">Add Claude API key</button>
+    </div>
+  </aside>
+
+  <main id="main">
+    <header class="topbar only-mobile">
+      <button class="icon" id="openSide" aria-label="Library">☰</button>
+      <b id="mobileTitle">Study Buddy</b>
+    </header>
+    <div id="view"></div>
+  </main>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<template id="chatTpl">
+  <section class="chat">
+    <div class="chat-head">
+      <div><b>🧑‍🏫 Tutor</b><small class="chat-scope"></small></div>
+      <button class="ghost small clear-chat">Clear chat</button>
+    </div>
+    <div class="chips presets"></div>
+    <div class="msgs"></div>
+    <form class="composer">
+      <textarea rows="1" placeholder="Ask anything about this material…"></textarea>
+      <button class="primary" type="submit">Send</button>
+    </form>
+  </section>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>
